@@ -10,14 +10,18 @@ def txt_to_latex(input_file, output_file):
     chapters = re.split(chapter_pattern, content)
     
     # 创建LaTeX文档头部
+    name=input("请输入小说名称：");
+    man=input("请输入作者名称：");
     latex_content = [
-        r'\documentclass[UTF8]{ctexart}',
+        r'\documentclass[UTF8, fontset=windows, xelatex]{ctexart}',
+        #ds说使用这个快一点，其实我也不太清楚QAQ
         r'\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}',
         r'\usepackage{parskip}',
+        r'\special{dvipdfmx:config z 0}',#这一行是用来组织pdf文件压缩的，编译快一点
         r'\setlength{\parindent}{2em}',
-        r'\title{二哈和他的白猫师尊}',
-        r'\author{}',
-        r'\date{}',
+        r'\title{'+name+'}',
+        r'\author{'+man'}',
+        r'\date{\today}',
         r'\begin{document}',
         r'\maketitle',
         r'\tableofcontents',
