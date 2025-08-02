@@ -87,6 +87,6 @@ def txt_to_latex(input_file, output_file):
 
 # 使用示例
 if __name__ == "__main__":
-    input_filename = "test.txt"   # 输入文件名
+    input_filename = 'test.txt'   # 输入文件名
     output_filename = "novel.tex"  # 输出文件名
     txt_to_latex(input_filename, output_filename)
